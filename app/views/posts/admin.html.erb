@@ -1,0 +1,11 @@
+
+
+  <%= link_to("新規投稿","new") %></p>
+  <% @posts.each do |post| %>
+  <%= post.id %>
+  <%= link_to(truncate(post.content, length:15),"edit/#{post.id}") %>
+  <%= link_to("削除","destroy/#{post.id}",{method:"post"}) %>
+  <br>
+  <% end %>
+
+  <%= link_to("ログアウト","/users/logout",{method: :post}) %>

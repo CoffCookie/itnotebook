@@ -1,0 +1,19 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.blogtable {
+  width: 90%;
+  margin-left: 10px;
+}
+
+th,td {
+    border: solid 1px;          /* 枠線指定 */
+    padding: 5px;
+}
+
+table {
+    margin-bottom: 20px;
+    border-collapse:  collapse; /* セルの線を重ねる */
+    width:  100%;               /* 幅指定 */
+    table-layout: fixed;        /* セルの幅計算指定 */
+}

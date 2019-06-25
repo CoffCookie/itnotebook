@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   def login
     #送信されたユーザデータをチェックする
-    @user = User.find_by(name: params[:name], password: params[:password])
-    if @user
+    @user = User.find_by(name: params[:name])
+    if @user && @user.authenticate(params[:password])
       session[:user_id]=@user.id
       redirect_to("/posts/admin")
     else

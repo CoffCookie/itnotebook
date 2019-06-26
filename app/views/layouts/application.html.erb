@@ -23,6 +23,7 @@
           <div class="sub">
               <dl>
                   <dt>メニュー</dt>
+                  <ul><li><%= link_to("[Notebook]ソースコード","https://github.com/CoffCookie/itnotebook.git") %></li></ul>
                   <% if session[:user_id] %>
                   <ul><li><%= link_to("管理室","/posts/admin") %></li></ul>
                   <% else %>

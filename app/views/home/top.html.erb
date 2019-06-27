@@ -1,9 +1,10 @@
 
+<p>開発メモ</p>
   <% @posts.each do |post| %>
     <table border="1" class="blogtable">
         <tr>
             <td class="blogcontent">
-                <%= simple_format(h(post.content)) %>
+                <%= simple_format(post.content) %>
             </td>
         </tr>
         <tr>

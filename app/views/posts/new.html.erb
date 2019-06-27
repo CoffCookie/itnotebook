@@ -1,7 +1,8 @@
 
   <h3>新規投稿</h3>
 
-  <%= form_tag("create") do %>
+  <%= form_tag("create",{multipart: true}) do %>
+  <input type="file" name="image"><br><br>
   <textarea name="content" rows="8" cols="80"></textarea>
   <br>
   <input type="submit" name="" value="投稿">

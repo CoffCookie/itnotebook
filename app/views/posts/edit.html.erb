@@ -1,5 +1,6 @@
 
-  <%= form_tag("/posts/update/#{@post.id}") do %>
+  <%= form_tag("/posts/update/#{@post.id}",{multipart: true}) do %>
+  <input type="file" name="image"><br><br>
   <textarea name="content" rows="8" cols="80">
   <%= @post.content %>
 

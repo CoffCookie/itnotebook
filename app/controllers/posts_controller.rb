@@ -6,6 +6,11 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(content: params[:content])
+    if params[:image]
+      @post.image_name = params[:image].original_filename
+      image = params[:image]
+      File.binwrite("public/post_image/#{@post.image_name}",image.read)
+    end
     @post.save
     redirect_to("/")
   end
@@ -18,6 +23,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
+    if params[:image]
+      @post.image_name = params[:image].original_filename
+      image = params[:image]
+      File.binwrite("public/post_image/#{@post.image_name}",image.read)
+    end
     @post.save
     redirect_to("/")
   end

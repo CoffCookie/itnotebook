@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   get "posts/index"
   get "posts/new" => "posts#new"
+  get "posts/image" => "posts#image"
   post "posts/create" => "posts#create"
+  post "posts/image_create" => "posts#image_create"
   get "posts/admin" => "posts#admin"
   get "posts/edit/:id" => "posts#edit"
   post "posts/update/:id" => "posts#update"

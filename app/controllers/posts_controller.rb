@@ -4,15 +4,23 @@ class PostsController < ApplicationController
 
   def new
   end
+  def image
+
+  end
   def create
     @post = Post.new(content: params[:content])
-    if params[:image]
-      @post.image_name = params[:image].original_filename
-      image = params[:image]
-      File.binwrite("public/post_image/#{@post.image_name}",image.read)
-    end
     @post.save
     redirect_to("/")
+  end
+  def image_create
+    if params[:image]
+      image = params[:image]
+      @image = Image.new(image_name: params[:image].original_filename)
+      @image.save
+      File.binwrite("public/post_image/#{@image.image_name}",image.read)
+      @image_tag = %Q[<img src="post_image/#{@image.image_name}">]
+      redirect_to("/posts/image",flash: {image_tag: @image_tag})
+    end
   end
   def edit
     @post = Post.find_by(id: params[:id])

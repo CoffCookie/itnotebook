@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  require "mini_magick"
   protect_from_forgery except: :create # createアクションを除外
   before_action :authenticate_user
 
@@ -14,11 +15,21 @@ class PostsController < ApplicationController
   end
   def image_create
     if params[:image]
-      image = params[:image]
+    #  image = params[:image]
+
       @image = Image.new(image_name: params[:image].original_filename)
       @image.save
-      File.binwrite("public/post_image/#{@image.image_name}",image.read)
+
+    #  File.binwrite("public/post_image/#{@image.image_name}",params[:image].read)
+      File.binwrite("public/post_image/#{@image.image_name}",params[:image].read)
       @image_tag = %Q[<img src="post_image/#{@image.image_name}">]
+
+      image_resize = MiniMagick::Image.open("public/post_image/#{@image.image_name}")
+      image_resize.resize "300x300"
+      image_resize.format "jpg"
+      image_resize.write "public/post_image/#{@image.image_name}"
+
+
       redirect_to("/posts/image",flash: {image_tag: @image_tag})
     end
   end

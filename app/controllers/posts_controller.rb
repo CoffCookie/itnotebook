@@ -15,12 +15,9 @@ class PostsController < ApplicationController
   end
   def image_create
     if params[:image]
-    #  image = params[:image]
-
       @image = Image.new(image_name: params[:image].original_filename)
       @image.save
 
-    #  File.binwrite("public/post_image/#{@image.image_name}",params[:image].read)
       File.binwrite("public/post_image/#{@image.image_name}",params[:image].read)
       @image_tag = %Q[<img src="post_image/#{@image.image_name}">]
 

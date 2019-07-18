@@ -1,6 +1,8 @@
 
 
-  <%= link_to("新規投稿","new") %></p>
+  <p><%= link_to("新規投稿","new") %></p>
+  <p><%= link_to("画像アップロード","/comments/new") %></p>
+
   <% @posts.each do |post| %>
   <%= post.id %>
   <%= link_to(truncate(post.content, length:15),"edit/#{post.id}") %>

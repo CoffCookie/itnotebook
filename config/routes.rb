@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :comments
   post "users/login" => "users#login"
   get "users/index" => "users#index"
   post "users/logout" => "users#logout"

@@ -1,7 +1,5 @@
-
-<%= form_tag("/posts/update/#{@post.id}",{multipart: true}) do %>
- <input type="file" name="image"><br><br>
- <textarea name="content" rows="8" cols="80"><%= @post.content %></textarea>
- <br>
- <input type="submit" name="button" value="編集">
+<h3>投稿を編集する</h3>
+<%= form_with model: @post, local: true do |form| %>
+  <%= render 'form', form: form %>
+  <%= form.submit value="更新する" %>
 <% end %>

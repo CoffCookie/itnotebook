@@ -4,6 +4,13 @@
 .blogtable {
   width: 90%;
   margin-left: 10px;
+  margin-bottom: 10px;
+
+  td.blogcontent {
+    background-position: right top;
+    background-repeat: no-repeat;
+    height: 100%
+  }
 }
 
 th,td {

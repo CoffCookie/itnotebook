@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
- gem 'mini_magick'
+ gem 'mini_magick', '~> 4.9.4'
  gem "aws-sdk-s3", require: false
  gem 'carrierwave'
 

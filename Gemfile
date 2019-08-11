@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
- gem 'mini_magick', '~> 4.9.4'
+ gem 'mini_magick'
  gem "aws-sdk-s3", require: false
  gem 'carrierwave'
 
@@ -67,3 +67,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'kaminari'
+gem 'kaminari-bootstrap'

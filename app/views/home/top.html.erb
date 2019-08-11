@@ -1,5 +1,6 @@
 
 <p>開発メモ</p>
+
   <% @posts.each do |post| %>
     <table border="1" class="blogtable">
         <tr>
@@ -15,4 +16,5 @@
             </td>
         </tr>
     </table>
- <% end %>
+  <% end %>
+  <%= paginate @posts %>
